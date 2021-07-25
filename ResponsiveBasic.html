@@ -20,7 +20,37 @@
     <div></div><div></div>
   </div>
 
+  <!-- 가변 패딩 -->
+  <div id="wrap-gabyun-padding">
+		<div class="gabyun-padding"></div><div class="gabyun-padding"></div>
+	</div>
+
+
+  <!-- 일반 삽입 동영상/이미지 가변적으로 만들기 -->
+  <div id="wrap-video">
+    <div>
+      <video controls>
+        <source src="source/video.mp4" type="video/mp4"></video>
+        <source src="source/video.ogv" type="video/ogg"></video>
+        <source src="source/video.webm" type="video/webm"></video>
+      </video>
+    </div><div>
+    <img src="source/img_01.jpg" alt="flower image"></div>
+  </div>
+
+  <!-- 유튜브나 비메오 가변적으로 만들기 -->
+  <!-- 방법1: 패딩 속성 사용하기 -->
+  <div id="vimeo">
+    <iframe src="https://player.vimeo.com/video/192526798?byline=0&badge=0" frameborder='0'
+      webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>   
+  </div>
+  <!-- 방법2: 스크립트 파일 사용 -->
+  <!-- fitvids.js라는 jQuery의 플러그인 스크립트 파일 사용하는 방식이라 생략 -->
+
+
   <style>
+    *{margin:0; padding:0;}
+
     /*  ch2 첫번째 실습 : 가변 그리드: 비율로 수치 계산 */
     #wrap { width: 90%; /* 960px */
       height: 500px; margin:0 auto; border:4px solid #000;}
@@ -39,6 +69,37 @@
     background: #1f518b;}
     #wrap > div:first-child + div { background: #f7e041;}
 
+    /* 가변패딩 */
+    #wrap-gabyun-padding {
+    width:90%;
+    /* 960px */
+    height:500px;
+    margin:0 auto;
+    border:4px solid #555;
+    }
+
+    .gabyun-padding { width: 31.25%; 
+      display: inline-block;}
+    .gabyun-padding:first-child { padding: 50px 5.2083333333333%;
+      background: #1f518b;}
+    .gabyun-padding:last-child { padding: 130px 13.54166666666%; 
+      background: yellow;}
+
+    /* 일반 삽입 동영상/이미지 가변적으로 만들기 */
+    #wrap-video { width: 90%; margin:0 auto;
+      border:4px solid #777; }
+    #wrap-video div { width: 50%; display: inline-block;}
+    img, video { width: 100%;
+      max-width: 100%;}
+
+    /* 유튜브나 비메오 가변적으로 만들기 */
+    /* 방법1: 패딩 속성 사용하기 */
+    #vimeo { position: relative;
+      padding-bottom: 56.25%; /* 9/16 */
+      height: 0; overflow: hidden;}
+    iframe { position:absolute; top:0; left:0; height:100%; width: 100%;}
+    /* 방법2: 스크립트 파일 사용 */
+    /* fitvids.js라는 jQuery의 플러그인 스크립트 파일 사용하는 방식이라 생략 */
   </style>
 
 </body>
