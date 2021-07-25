@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 뷰포트 메타태그: 사파리 웹브라우저에서 먼저 개발하여 사용하다 퍼진 것. W3C 표준 기술보다 메타 태그 방식을 선호 추세이므로 표준 방식의 뷰포트 기술이 지속될지, 사라질지는 파악하기 힘듦. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>3장 미디어 쿼리와 뷰포트 실습</title>
+</head>
+<body>
+
+    <!-- 미디어 쿼리 기본 -->
+    <div id="wrap-mediaquery-basic"></div>
+
+    <!-- 미디어 쿼리 레이아웃 -->
+    <div id="wrap-mediaquery-layout">
+      <div></div><div></div><div></div><div></div><div></div>
+    </div>
+  
+    <style>
+
+      /* W3C 표준 css 작성 방식: CSS 파일내나 style 태그 안에 작성 */
+      @viewport {
+        width: device-width; /* width 속성과 동일 */
+        zoom:1; /* initial-scale 속성과 동일 */
+        min-zoom:1; /* minimum-scale 속성과 동일 */
+        max-zoom:1; /* maximum-scale 속성과 동일 */
+        user-zoom:zoom; /* user-scalable 속성과 동일 */
+      }
+
+
+      *{margin:0; padding:0;}
+      
+      /* 미디어 쿼리 기본 */
+      /* #wrap-mediaquery-basic { height: 500px; margin:0 auto; border:4px solid #777; }
+  
+      @media all and (min-width:320px) {
+        #wrap-mediaquery-basic { width: 30%; background: #00d2a5;}
+      }
+  
+      @media all and (min-width:768px) {
+        #wrap-mediaquery-basic { width:60%; background: #40b0f9;}
+      }
+  
+      @media all and (min-width:1024px) {
+        #wrap-mediaquery-basic { width:90%; background: #f45750;}
+      } */
+  
+      /* 미디어 쿼리 레이아웃 기본 */
+      #wrap-mediaquery-layout { width: 90%; margin: 0 auto; border:4px solid #777;}
+      #wrap-mediaquery-layout div { display: inline-block; height: 100px;}
+      #wrap-mediaquery-layout div:first-child{background: red;}
+      #wrap-mediaquery-layout div:nth-child(2){background: orange;}
+      #wrap-mediaquery-layout div:nth-child(3){background: yellow;}
+      #wrap-mediaquery-layout div:nth-child(4){background: green;}
+      #wrap-mediaquery-layout div:last-child{background: blue;}
+  
+      @media (min-width:320px) {
+        #wrap-mediaquery-layout div{width: 100%;}
+      }
+      @media (min-width:768px) {
+        #wrap-mediaquery-layout div{width: 50%;}
+        #wrap-mediaquery-layout div:last-child{width: 100%;}
+      }
+      @media (min-width:1024px) {
+        #wrap-mediaquery-layout div{width: 20%;}
+        #wrap-mediaquery-layout div:last-child{width: 70%;}
+      }
+      
+  
+    </style>
+  
+</body>
+</html>
