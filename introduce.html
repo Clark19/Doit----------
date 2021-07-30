@@ -45,6 +45,40 @@
       cursor:pointer;}
 
     
+    /* 서브 헤더 영역 */
+    .sub_header_section{
+      order:3;
+      padding: 48px 0;
+      padding: 3.0rem 0;
+      text-align: center;
+      background: #219af7;
+    }
+    .sub_header_section h2{
+      margin-bottom: 12px;
+      margin-bottom: 0.750rem;
+      font-size: 1.313em;
+      font-size: 1.313rem;
+      color:#fff;
+    }
+    .breadcrum_list li{
+      display:inline;
+      font-size:0.813em;
+      font-size: 0.813rem;
+      font-weight: bold;
+    }
+
+    /* 컨텐츠 영역 */
+    .content_section{
+      order:4;
+      padding: 20px;
+      padding: 1.250rem;
+      background: #fff;
+    }
+
+    .content_section > div{
+      margin-top: 60px;
+      margin-top: 3.750rem;
+    }
   
     /* 푸터 영역 */
     .footer{
@@ -62,6 +96,47 @@
       font-weight: bold;
       color:#fff;
       text-shadow: 0px 1px 1px #191919;
+    }
+    /* End of mobile css */
+
+
+
+    /* 태블릿용 css */
+    @media (min-width:768px) {
+    /* 기본 CSS */
+
+    /* 컨텐츠 영역 */
+    .content_section{
+      padding: 40px;
+      padding: 2.5rem;
+    }
+    
+
+    }
+
+    /* PC용 CSS */
+    @media (min-width:960px) {
+    /* 기본 CSS */
+    #wrap { position:relative; width:90%;}
+    
+    /* 서브 헤더 */
+    .sub_header_section{
+      order:2;
+    }
+
+    /*  컨텐츠 영역 */
+    .content_section{
+      order:3;
+      padding: 60px;
+      padding: 3.750rem;
+    }
+
+
+    /* 푸터 영역 */
+    .footer{
+      order:4
+    }
+
     }
   </style>
 </head>
@@ -139,26 +214,5 @@
     </footer>
   </div>
   
-
-  <style>
-    /* 모바일용 CSS */
-    /* 기본 CSS */
-    #wrap{display: flex; flex-flow:column nowrap; width:80%;
-      margin:0 auto; max-width: 1200px;}
-    #wrap section { box-sizing: border-box;}
-    
-    /* 태블릿용 css */
-    @media (min-width:768px) {
-    /* 기본 CSS */
-    
-
-    }
-
-    /* PC용 CSS */
-    @media (min-width:960px) {
-    /* 기본 CSS */
-    #wrap { position:relative; width:90%;}
-    }
-  </style>
 </body>
 </html>
