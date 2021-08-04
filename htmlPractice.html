@@ -92,6 +92,109 @@
         <img src="images/p_images/sub_gallery_01.jpg" alt="도시야경" style="width: 40%;">
       </div>
     </section>
+
+    <section id="form">
+      <h3>회원 가입을 환영합니다.</h3>
+      <form action="" method="POST">
+        <fieldset>
+          <legend>사용자 정보</legend>
+          <ul>
+            <li><label for="uid">ID</label>
+              <input type="text" id="uid" autofocus required placeholder="4자 ~10자 사이, 공백없이">
+            </li>
+            <li><label for="umail">EMAIL</label><input type="email" id="umail" required></li>
+            <li><label for="pwd1">PASSWORD</label><input type="password" id="pwd1"></li>
+            <li><label for="pwd2">Confirm PASSWORD</label><input type="password" id="pwd2"></li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>이벤트와 새로운 소식</legend>
+          <input type="radio" name="mailing" id="mailing_y">
+          <label for="mailing_y">메일 수신</label>
+          <input type="radio" name="mailing" id="mailing_n" checked>
+          <label for="mailing_n">메일 수신 안 함</label>
+        </fieldset>
+        <div class="buttons">
+          <input type="submit" value="가입하기">
+          <input type="reset" value="취소">
+        </div>
+      </form>
+
+      <form action="" method="POST">
+        <input type="hidden" value="사이트를 통한 직접 로그인">
+        <fieldset>
+          <legend>로그인</legend>
+          <label for="user_id">아이디 : </label>
+          <input type="text" id="user_id" placeholder="아이디를 입력하세요." size='10' maxlength="15">
+          <label>비밀번호 : <input type="password" id="user_pw" size='10'></label>
+          <input type="submit" value="로그인">
+        </fieldset>
+        <fieldset>
+          <legend>상품 선택</legend>
+          <p><b>주물할 상품을 선택하세요</b></p>
+          <ul>
+            <li>
+              <label><input type="checkbox" value="s_3">선물용 3kg</label>
+              <input type="number" min='0' max='5' step='1' value='1'>개 (최대 5개)
+            </li>
+            <li><label><input type="checkbox" value="s_5">선물용 5kg</label>
+              <input type="number" min='0' max='3'>개 (최대 3개)
+            </li>
+            <li><label><input type="checkbox" value="f_5">가정용 5kg</label>
+              <input type="range" min='0' max='5' step='1' value='1'>개 (최대 5개)
+            </li>
+            <label for="prod1">상품선택</label>
+            <select id="prod1">
+              <option value="special_3" selected>선물용 3kg</option>
+              <option value="special_5">선물용 5kg</option>
+              <option value="family_3">가정용 3kg</option>
+              <option value="family_5">가정용 5kg</option>
+            </select>
+
+            <p><b>포장 선택</b></p>
+            <label><input type="radio" name="gift" value="yes">선물 포장</label>
+            <label><input type="radio" name="gift" value="no">선물 포장 안함</label>
+            
+            <li>
+              <label for="prod2">포장여부</label>
+              <input type="text" id='prod2' list="pack">
+              <datalist id="pack">
+                <!-- datalist는 크롬,엣지,파폭 셋다 제 멋대로 출력된다고 함. 일관성 없어서 아직 사용 못할 듯. -->
+                <option value="package">선물 포장</option>
+                <option value="no_package">선물 포장 안함</option>
+              </datalist>
+            </li>
+            
+            <li><label for='memo'>메모</label>
+              <textarea id='memo' cols="30" rows="3"></textarea>
+            </li>
+          </ul>
+
+        </fieldset>
+      <input type="text" value="주문상품: 상품용 3KG" readonly>
+
+        <div class="buttons">
+          <input type="image" src="images/img_01.jpg" alt='주문하기'>
+          <input type="button" value="공지창 열기" onclick="window.open('board.html')">
+        </div>
+
+        <button type="submit">주문하기</button>
+        <button type="reset">취소하기</button>
+        <button>버튼 누르기</button>
+      </form>
+
+      <h3>날짜 지정하기</h3>
+      <input type="date">
+      <input type="month">
+      <input type="week">
+
+      <h3>시간 지정하기</h3>
+      <input type="time">
+      <input type="date" min="2021-08-02" max="2021-08-20">
+      <input type="datetime-local" min="2021-08-02" max="2021-08-20">
+      <!-- type 값이 time, datetime-local 은 min, max 속성 적용 안되는 듯!
+           min, max 속성은 time, number, (range는?) 만 적용되는 듯? -->
+    </section>
     
     <aside>Banner</aside>
   </main>
@@ -108,6 +211,7 @@
       border-collapse: collapse; 테두리 1줄만 표시
     }
     th, td { padding: 5px;}
+    fieldset { border: 1 dashed mediumaquamarine;}
     tfoot { text-align: center;}
   </style>
 
