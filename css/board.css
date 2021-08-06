@@ -320,7 +320,7 @@ display:block;
 .logo { width:12.5%; /*120px / 960px */ }
 .nav { display:flex; align-items: center; position:static;
   width:87.5%; /* 840px / 960px */ }
-  .gnb {
+.gnb {
   display: flex !important;
   flex-direction: row;
   position: static;

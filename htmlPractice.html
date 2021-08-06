@@ -206,6 +206,44 @@
         <li>uLIst2</li>
       </ul>
     </section>
+
+    <section id="border">
+      <div class="border round1"></div>
+      <div class="border round2"></div>
+      <div class="border round3"></div>
+      <div class="border round4"></div>
+    </section>
+
+    <section id="floatbox">
+      <div id="box1">박스1</div>
+        <div id="box2">박스2</div>
+        <div id="box3">박스3</div>
+        <div id="box4">박스4</div>
+    </section>
+    <style>
+      #floatbox div {
+        padding:20px;
+        margin:10px;
+      }
+      #floatbox #box1{
+        background:#ffd800;
+        float:left;  /* 왼쪽으로 플로팅 */ 
+        height: 100px;
+      }
+      #floatbox #box2 {
+        background: #0094ff;
+        float:left;  /* 왼쪽으로 플로팅 */
+        height: 100px;
+      }
+      #floatbox #box3 {
+        background: #00ff21;
+      }
+      #floatbox #box4 {
+        background:#a874ff;
+        clear:left; /* 플로팅 해제 */
+      }
+    </style>
+
     
     <aside>
       <h3>Banner</h3>
@@ -226,6 +264,68 @@
       </div>
 
     </aside>
+
+    <section id="float2columnLayout">
+      <h2>강아지 용품 준비하기</h2>
+      <article>  
+        <h3>강아지 집 </h3>
+        <p>강아지가 편히 쉴 수 있는 포근한 집이 필요합니다. 강아지의 집은 강아지가 다 큰 후에도 계속 쓸 수 있는 집으로 구입하세요.집을 구입하실 때는 박음질이 잘 되어 있는지, 세탁이 간편한 제품인지 꼭 확인하시고 고르시는 것이 좋습니다.</p>
+      </article>
+      <article> 
+        <h3>강아지 먹이 </h3>
+        <p>강아지의 먹이는 꼭 어린 강아지용으로 나와있는 사료를 선택하세요. 강아지들은 사람에 비해 성장속도가 8배정도 빠르답니다. 따라서 강아지에게는 성장속도에 맞는 사료를 급여하셔야 합니다. 사람이 먹는 음식을 먹게 되면 양념과 향신료에 입맛이 익숙해지고, 비만이 될 가능성이 매우 높아집니다. 강아지용 사료는 생후 12개월까지 급여하셔야 합니다.</p>
+      </article>
+      <article> 
+        <h3>밥그릇, 물병 </h3>
+        <p>밥그릇은 쉽게 넘어지지 않도록 바닥이 넓은 것이 좋습니다.물병은 대롱이 달린 것으로 선택하세요. 밥그릇에 물을 주게 되면 입 주변에 털이 모두 젖기 때문에 비위생적이므로 대롱을 통해서 물을 먹을 수 있는 물병을 마련하시는 것이 좋습니다.</p>
+      </article>
+      <article> 
+        <h3>이름표, 목줄</h3> 
+        <p>강아지를 잃어버릴 염려가 있으니 산책할 무렵이 되면 이름표를 꼭 목에 걸어주도록 하세요. 그리고 방울이 달린 목걸이를 하고자 하실 때는 신중하셔야 합니다. 움직일 때마다 방울이 딸랑 거리면 신경이 예민한 강아지들에게는 좋지 않은 영향을 끼칠 수 있기 때문입니다.</p>
+      </article>
+      <footer>
+        <p>float:left를 이용한 2 컬럼 레이아웃 연습하기</p>
+      </footer>
+    </section>
+
+    <!-- float:left를 이용한 2 컬럼 레이아웃 -->
+    <style>
+      #float2columnLayout{
+        width:800px;
+        margin: 0 auto;	
+      }
+      #float2columnLayout h2{
+        font-size:1.5em;
+      }
+      #float2columnLayout h3 {
+        font-size:1.0em;
+      }
+      #float2columnLayout p {
+        line-height:20px;
+        font-size:12px;
+      }
+      #float2columnLayout article{
+        float:left;
+        width:350px;
+        height:200px;	
+        margin:10px;
+        padding:10px;	
+        border:1px solid #ccc;
+      }
+      #float2columnLayout footer {
+        clear:left;
+        width:100%;
+        height:50px;
+        background-color:#222;
+      }
+      #float2columnLayout footer > p {
+        color:#fff;
+        font-size:0.9em;
+        text-align: center;
+        line-height:50px;
+      }
+    </style>
+
   </main>
 
   <footer>
@@ -234,9 +334,16 @@
   </footer>
 
   <style>
+    body { 
+      /* bg 이미지 실습 */
+      background:url('images/p_images/sub_gallery_11.jpg') no-repeat 10% 10rem fixed;
+      /* background-position: 100% 10rem;  */
+      background-size: cover;
+    }
     header { background: url(images/img_01.jpg);
       width: 100%; }
     article > h1 { text-shadow: 3px 2px 5px red;}
+
     table { border: 1px solid #777;
       border-collapse: collapse; /* 테두리 1줄만 표시 */
       caption-side: bottom; /* 표 캡션 위치 아래로 */
@@ -251,15 +358,44 @@
     #ul2 { list-style: url(images/dot.png) outside; } /* list-style 단축형 */
 
 
+    /* Border */
+    .border {
+      width:200px;
+      height:100px;
+      display:inline-block;
+      margin:15px;
+      background:#ffd800;
+      border:2px solid #222;
+    }
+    .round1{ /* 네군데 모두 타원 곡선 줄때  /(슬래시) 사용 */
+      border-radius : 50px/30px;  /* 네 군데 꼭짓점을 똑같은 크기로 라운딩 */
+    }
+    .round2{ /* 특정 꼭짓점을 타원 형태로 만들 땐 슬래시 없이 가로 반지름 세로 반지름을 지정 */
+      border-bottom-right-radius : 50% 30%;  /* 오른쪽 아래 꼭짓점을 가로 50%, 세로 30% 크기로 라운딩 */
+    }
+    .round3{
+      border-top-left-radius: 50px 30px;  /* 왼쪽 위 꼭짓점을 가로 50px, 세로 30px 크기로 라운딩 */
+    }
+    .round4{
+      border-bottom-left-radius: 30px;  /* 값이  하나 뿐이면 가로 세로 똑같이 30px 크기로 라운딩  */
+    }
+
+
+
     aside {  /* 전체 콘텐츠를 감싸는 div */
-			width:650px;  /* 너비 */
+			width:300px;  /* 너비 */
 			margin:0 auto;  /* 가로로 중앙에 배치 */
-			padding:5px;	/* 테두리와 내용 사이의 패딩 여백 */		
+			padding:5px;	/* 테두리와 내용 사이의 패딩 여백 */
+      position: fixed;
+      top: 6rem;
+      right: 0;
 		}
+    aside img { border-radius: 30px / 25px; width: 100%;}
 		#check {   /* 텍스트 부분을 감싸는 div */
-			width:640px;  /* 너비 - 그림 너비 값에 맞춤 */
+      /* 너비 - 그림 너비 값에 맞춤 */
+			/* width:640px; */
 			border:1px solid #ccc;  /* 테두리 */
-		}		
+		}
 		h1 {
 			color: white; /* 글자색 */
 			font-size: 1em; /* 글자 크기 */
