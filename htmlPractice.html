@@ -16,10 +16,27 @@
   <header>
     <nav>
     <ul>
-      <li>menu1</li>
-      <li>menu2</li>
+      <li><a href="#table">테이블</a></li>
+      <li><a href="#form">회원가입 form</a></li>
+      <li><a href="#border">border, float box</a></li>
+      <li><a href="#float2columnLayout">float2columnLayout</a></li>
     </ul>
     </nav>
+    <style>
+      header > nav { height: 100px;}
+      header > nav ul { list-style-type: none;}
+      header > nav ul li {float:left; width: 150px; padding:10px;}
+      header > nav ul li::after {display: block; content:''; clear:both;}
+      header > nav a:link, header > nav a:visited {
+        display:block;
+        color:rgb(255, 241, 51); text-decoration: none; font-size: 1.5rem; padding: 10px;
+        text-align:center; }
+      header > nav a:hover, header > nav a:focus { background: #555; color:#fff;} 
+      header > nav a:active { background: #f00;} 
+
+      #form:target{background: gray; color:blue;}
+
+    </style>
   </header>
 
   <main class="contents">
@@ -42,7 +59,7 @@
       <h2>다양한 액티... 섬</h2>
     </section>
 
-    <section class="table">
+    <section class="table" id='table'>
       <table>
         <caption>Table Practice</caption>
         <colgroup>
@@ -93,10 +110,18 @@
       </div>
     </section>
 
+    <style>
+      form .signup label { float:left; width:100px;}
+      form .signup label::after{ content:''; display:block; clear:both; }
+      form .signup ul { list-style-type:none; }
+      form .signup input { border-radius: 4px; width: 250px; font-size: 13px; padding:5px;}
+      form .signup input[required] {border:1px solid #f00;}
+      form .signup input[read-only] {border:none;}
+    </style>
     <section id="form">
       <h3>회원 가입을 환영합니다.</h3>
       <form action="" method="POST">
-        <fieldset>
+        <fieldset class='signup'>
           <legend>사용자 정보</legend>
           <ul>
             <li><label for="uid">ID</label>
