@@ -363,7 +363,7 @@
       </style>
     </section>
 
-    <div id="transition2">
+    <section id="transition2">
       <h1>신상품 목록</h1>
       <ul class="prod-list">
         <li>
@@ -419,14 +419,38 @@
           z-index:5;
           transition: all 0.6s ease-in-out;
         }
+        #transition2 li:hover img{transform:scale(1.5);}
         #transition2 .caption { opacity:0; position:absolute; top:200px;
           width:15vw; height:200px; padding-top: 20px; background: rgba(0,0,0,0.6);
-          transition: all 0.6s ease-in-out; z-index: 10;}
+          transition: all 0.6s ease-in-out; z-index: 10;
+          color:#fff; text-align: center; }
         #transition2 li:hover .caption {opacity:1; transform:translateY(-200px);}
-        #transition2 li:hover img{transform:scale(1.5);}
-        #transition2 .caption {color:#fff; text-align: center;}
       </style>
-    </div>
+    </section>
+
+    <section id="animation">
+      <img src="images/img_01.jpg" alt="곰인형 사진">
+      <style>
+        #animation {
+          width:200px;
+          height: 200px;
+        margin:30px auto;
+        }
+        #animation img {
+          height: 200px;
+          width:200px;
+          border:1px solid #ccc;
+          border-radius:50%;      
+          box-shadow: 5px 5px 30px 2px #000;
+          animation: rotateFlower 2.5s infinite; /* rotateFlower 애니메이션 2.5초 동안 실행. 무한 반복 */
+        }
+        @keyframes rotateFlower {
+          from { transform: perspective(200px) rotateY(0deg); }
+          50% { transform: perspective(200px) rotateY(180deg); }
+          to { transform: perspective(200px) rotateY(360deg); }
+        }
+      </style>
+    </section>
 
   </main>
 
