@@ -19,7 +19,7 @@
     }
 
 
-    *{margin:0; padding:0;}
+    *{margin:0; padding:0; box-sizing: border-box;}
     body{background: red no-repeat center center fixed; background-size: cover;}
     
     /* 미디어 쿼리 레이아웃 기본 */
@@ -58,6 +58,185 @@
     <div id="wrap-mediaquery-layout">
       <div></div><div></div><div></div><div></div><div></div>
     </div>
+
+    <section id="grid">
+      <section class="auto-fit">
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. </div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit amet.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem, ipsum dolor.</div>
+      </section>
+      <section class="auto-fill">
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. </div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit amet.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem, ipsum dolor.</div>
+      </section>
+      <style>
+        #grid section { margin-top: 10px;}
+        #grid section:nth-child(1), #grid section:nth-child(2)  { display:grid; color:#333;
+          grid-template-rows: 100px;
+          grid-gap: 5px 10px;
+        }
+        /* 자동으로 컬럼 개수를 조정하는 auto-fit과 auto-fill:
+        auto-fit 과 auto-fill 차이: fit은 화면이 넓을때 남는 공간없이 꽉 채움
+            fill은 컬럼의 최소 너비(여기산 200px)만 표시하고 남는 공간은 그대로 둠 */
+        .auto-fit{grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));}
+        .auto-fill {grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));}
+        .items{ padding:10px; background: #eee;}
+        .items:nth-child(odd){ background-color: #bbb; }
+      </style>
+
+      <!-- CSS3 grid line을 이용한 배치 -->
+      <section class="grid-line">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+      </section>
+      <style>
+        .grid-line{ width:700px; color:#fff;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr); /* 컬럼(열)은 1fr씩 3개 */
+          grid-template-rows: minmax(3, 100px); /* 줄은 100px씩 개 */
+        }
+        .grid-line > .box{text-align: center; padding:15px; }
+        .grid-line > .box1{grid-column: 1/4; background: #3689ff;}
+        .grid-line > .box2{grid-row: 2/4; background:#00cf12;}
+        .grid-line > .box3{grid-column: 2/4; grid-row-start: 2; /* grid-row:2/3; */ background: orangered; }
+        .grid-line > .box4{grid-column-start: 3; grid-row-start:3; background: orange;}
+      </style>
+
+      <!-- CSS3 grid 템플릿 영역을 만들어 배치 -->
+      <section class="grid-template-areas">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+      </section>
+      <style>
+        .grid-template-areas{ width:700px; color:#fff;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr); /* 컬럼(열)은 1fr씩 3개 */
+          grid-template-rows: minmax(3, 100px); /* 줄은 100px씩 개 */
+          grid-template-areas:
+            "box1 box1 box1"
+            "box2 box3 box3"
+            "box2 . box4";
+        }
+        .grid-template-areas > .box{text-align: center; padding:15px; }
+        .grid-template-areas > .box1{grid-area:box1; background: #3689ff;}
+        .grid-template-areas > .box2{grid-area:box2; background:#00cf12;}
+        .grid-template-areas > .box3{grid-area:box3; background: orangered; }
+        .grid-template-areas > .box4{grid-area:box4; background: orange;}
+      </style>
+
+      <section class="gridquiz">
+        <div class="card">
+          <header>
+            <h3>사진 제목</h3>
+          </header>
+          <figure>
+            <img src="images/p_images/sub_gallery_01.jpg">
+          </figure>
+          <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+        </div>
+    
+        <div class="card">
+          <header>
+            <h3>사진 제목</h3>
+          </header>
+          <figure>
+            <img src="images/p_images/sub_gallery_02.jpg">
+          </figure>
+          <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+        </div>
+    
+        <div class="card">
+          <header>
+            <h3>사진 제목</h3>
+          </header>
+          <figure>
+            <img src="images/p_images/sub_gallery_03.jpg">
+          </figure>
+          <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+        </div> 
+        
+        <div class="card">
+          <header>
+            <h3>사진 제목</h3>
+          </header>
+          <figure>
+            <img src="images/p_images/sub_gallery_04.jpg">
+          </figure>
+          <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+        </div>     
+    
+        <div class="card">
+          <header>
+            <h3>사진 제목</h3>
+          </header>
+          <figure>
+            <img src="images/p_images/sub_gallery_05.jpg">
+          </figure>
+          <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+        </div>
+    
+        <div class="card">
+          <header>
+            <h3>사진 제목</h3>
+          </header>
+          <figure>
+            <img src="images/p_images/sub_gallery_06.jpg">
+          </figure>
+          <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+        </div>
+    
+        <div class="card">
+          <header>
+            <h3>사진 제목</h3>
+          </header>
+          <figure>
+            <img src="images/p_images/sub_gallery_07.jpg">
+          </figure>
+          <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+        </div> 
+        
+        <div class="card">
+          <header>
+            <h3>사진 제목</h3>
+          </header>
+          <figure>
+            <img src="images/p_images/sub_gallery_08.jpg">
+          </figure>
+          <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+        </div>
+        <style>
+          .gridquiz { display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 1rem; }
+          .card {
+            background-color:#fff;
+            box-shadow:0px 1px 5px #222;
+          }
+          .card > header {
+            font-size:1.5rem;
+            padding:0.5rem;
+          }
+          .card > p {
+            padding:0.5rem;
+            line-height:1.6em;
+          }
+          img {
+            max-width:100%;
+          }
+        </style>
+      </section>
+
+    </section> <!-- /#grid -->
+
   
     
   
